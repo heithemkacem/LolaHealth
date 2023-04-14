@@ -8,12 +8,12 @@ const IconBg = styled.View`
   justify-content: center;
   align-items: center;
 `;
-const Logo = ({ src, ...props }) => {
+const ImageComponent = ({ src, width, height, ...props }) => {
   return (
     <IconBg style={{ ...props.style }}>
-      <Image source={src} style={{ width: 149, height: 91 }} />
+      <Image source={src} style={{ width: width, height: height }} />
     </IconBg>
   );
 };
 
-export default Logo;
+export default ImageComponent;

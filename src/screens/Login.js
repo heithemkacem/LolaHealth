@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, View, ActivityIndicator, Text } from "react-native";
 import MainContainer from "../componentsFolder/containers/MainContainer";
-import Logo from "../componentsFolder/imageComponents/Logo";
+import ImageComponent from "../componentsFolder/imageComponents/ImageComponent";
 import StyledTextInput from "../componentsFolder/input/StyledTextInput";
 import { Formik } from "formik";
 import { LoginSchema } from "../util/validationSchemas";
@@ -10,7 +10,8 @@ import RegularButton from "../componentsFolder/buttons/RegularButton";
 import ColumnContainer from "../componentsFolder/containers/ColumnContainer";
 import { colors } from "../styles/colors";
 import { ScreenHeight } from "../util/shared";
-import Model from "../componentsFolder/model/Model";
+import ForgetPasswordModel from "../componentsFolder/model/ForgetPasswordModel";
+import MailRecivedModel from "../componentsFolder/model/MailRecivedModel";
 const Login = () => {
   const { black, white } = colors;
   const [modalVisible, setModalVisible] = useState(false);
@@ -18,7 +19,11 @@ const Login = () => {
   return (
     <MainContainer>
       <View style={{ height: ScreenHeight * 0.88 }}>
-        <Logo src={require("../assets/icon.png")} />
+        <ImageComponent
+          src={require("../assets/icon.png")}
+          height={91}
+          width={149}
+        />
         <Formik
           initialValues={{ email: "", password: "" }}
           validationSchema={LoginSchema}
@@ -90,7 +95,10 @@ const Login = () => {
           </PressableText>
         </ColumnContainer>
       </View>
-      <Model modalVisible={modalVisible} setModalVisible={setModalVisible} />
+      <MailRecivedModel
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </MainContainer>
   );
 };

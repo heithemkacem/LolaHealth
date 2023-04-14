@@ -10,7 +10,7 @@ import { colors } from "../../styles/colors";
 import { BlurView } from "expo-blur";
 import { styles } from "../../styles/styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-const Model = ({ modalVisible, setModalVisible }) => {
+const ForgetPasswordModel = ({ modalVisible, setModalVisible }) => {
   const { white, black, grayformodel } = colors;
 
   return (
@@ -91,4 +91,4 @@ const Model = ({ modalVisible, setModalVisible }) => {
   );
 };
 
-export default Model;
+export default ForgetPasswordModel;

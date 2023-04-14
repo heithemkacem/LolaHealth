@@ -9,7 +9,12 @@ const StyledText = styled.Text`
   text-align: center;
 `;
 const SmallText = (props) => {
-  return <StyledText {...props}>{props.children}</StyledText>;
+  return (
+    <StyledText {...props}>
+      {props.children}
+      {props.text}
+    </StyledText>
+  );
 };
 
 export default SmallText;

@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 import { colors } from "./colors";
 import { ScreenHeight } from "./../util/shared";
-const { white, grayformodel } = colors;
+const { white, grayformodel, darkgray } = colors;
 export const styles = StyleSheet.create({
-  //Model Styles
+  //Forget Password Model Styles
   centeredView: {
     flex: 1,
     width: "100%",
@@ -36,5 +36,36 @@ export const styles = StyleSheet.create({
   },
   mt15: {
     marginTop: 15,
+  },
+
+  //Mail Recived Model Styles
+  mailCenteredView: {
+    flex: 1,
+    width: "100%",
+    position: "absolute",
+    bottom: 0,
+    backgroundColor: white,
+    height: ScreenHeight * 0.4,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+  bigText: {
+    padding: 15,
+    textAlign: "center",
+  },
+  regularText: {
+    color: darkgray,
+    fontWeight: 500,
+    textAlign: "center",
+  },
+  mt20: {
+    marginTop: 20,
+  },
+  imageStyle: {
+    top: "-20%",
+  },
+  mailModalView: {
+    padding: 15,
+    top: "-20%",
   },
 });
