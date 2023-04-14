@@ -5,4 +5,7 @@ export const colors = {
   secondary: "#808080",
   white: "#fff",
   black: "#000",
+  darkgray: "#737B8B",
+  lightgray: "#BBC0C9",
+  grayforlabel: "#8F97A8",
 };
