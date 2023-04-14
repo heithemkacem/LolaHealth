@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, View, ActivityIndicator, Text } from "react-native";
 import MainContainer from "../componentsFolder/containers/MainContainer";
 import Logo from "../componentsFolder/imageComponents/Logo";
@@ -10,8 +10,11 @@ import RegularButton from "../componentsFolder/buttons/RegularButton";
 import ColumnContainer from "../componentsFolder/containers/ColumnContainer";
 import { colors } from "../styles/colors";
 import { ScreenHeight } from "../util/shared";
+import Model from "../componentsFolder/model/Model";
 const Login = () => {
   const { black, white } = colors;
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <MainContainer>
       <View style={{ height: ScreenHeight * 0.88 }}>
@@ -56,7 +59,9 @@ const Login = () => {
                 onBlur={handleBlur("password")}
                 errors={touched.password && errors.password}
               />
-              <PressableText>Mot de passe oublié ?</PressableText>
+              <PressableText onPress={() => setModalVisible(true)}>
+                Mot de passe oublié ?
+              </PressableText>
               {!isSubmitting && (
                 <RegularButton
                   style={{ marginTop: 20 }}
@@ -85,6 +90,7 @@ const Login = () => {
           </PressableText>
         </ColumnContainer>
       </View>
+      <Model modalVisible={modalVisible} setModalVisible={setModalVisible} />
     </MainContainer>
   );
 };
