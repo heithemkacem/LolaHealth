@@ -7,31 +7,26 @@ import RowContainer from "../containers/RowContainer";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 const { primary, white } = colors;
 const ButtonView = styled.TouchableOpacity`
-  padding: 15px;
   background-color: ${primary};
   width: 100%;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  border-raduis: 40px;
+  justify-content: center;
   height: 48px;
-  margin-bottom: 20px;
   border-radius: 8px;
 `;
-const RegularButton = ({ color, icon, ...props }) => {
+const RegularButton = ({ color, icon, title, ...props }) => {
   return (
     <ButtonView {...props} onPress={props.onPress}>
       {!icon ? (
-        <>
-          <RegularText>{props.title}</RegularText>
+        <RowContainer>
+          <RegularText>{title}</RegularText>
           {props.children}
-        </>
+        </RowContainer>
       ) : (
         <RowContainer>
-          <RegularText>{props.title}</RegularText>
-
+          <RegularText>{title}</RegularText>
           <MaterialCommunityIcons
-            style={{ marginLeft: 10 }}
+            style={{ marginLeft: 10, marginTop: 3 }}
             name={icon}
             size={19}
             color={white}

@@ -37,7 +37,7 @@ const MailRecivedModel = ({ modalVisible, setModalVisible }) => {
 
           <View>
             <ImageComponent
-              src={require("./../../assets/icon.png")}
+              src={require("./../../assets/paper.png")}
               height={151}
               width={176}
               style={styles.imageStyle}

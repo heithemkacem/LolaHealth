@@ -11,13 +11,13 @@ import ColumnContainer from "../componentsFolder/containers/ColumnContainer";
 import { colors } from "../styles/colors";
 import { ScreenHeight } from "../util/shared";
 import ForgetPasswordModel from "../componentsFolder/model/ForgetPasswordModel";
-import MailRecivedModel from "../componentsFolder/model/MailRecivedModel";
+
 const Login = () => {
   const { black, white } = colors;
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <MainContainer>
+    <MainContainer blurRadius={1}>
       <View style={{ height: ScreenHeight * 0.88 }}>
         <ImageComponent
           src={require("../assets/icon.png")}
@@ -26,7 +26,7 @@ const Login = () => {
         />
         <Formik
           initialValues={{ email: "", password: "" }}
-          validationSchema={LoginSchema}
+          //validationSchema={LoginSchema}
           onSubmit={(values, { setSubmitting }) => {
             console.log(values);
           }}
@@ -49,7 +49,7 @@ const Login = () => {
                 onChangeText={handleChange("email")}
                 onBlur={handleBlur("email")}
                 value={values.email}
-                errors={touched.email && errors.email}
+                //errors={touched.email && errors.email}
               />
               <StyledTextInput
                 label={"Mot de passe"}
@@ -62,7 +62,7 @@ const Login = () => {
                 value={values.password}
                 onFocus={() => han}
                 onBlur={handleBlur("password")}
-                errors={touched.password && errors.password}
+                //errors={touched.password && errors.password}
               />
               <PressableText onPress={() => setModalVisible(true)}>
                 Mot de passe oublié ?
@@ -76,12 +76,12 @@ const Login = () => {
                 ></RegularButton>
               )}
               {isSubmitting && (
-                <Button disabled={true}>
+                <RegularButton disabled={true} style={{ marginTop: 20 }}>
                   <ActivityIndicator
                     size="small"
                     color={white}
                   ></ActivityIndicator>
-                </Button>
+                </RegularButton>
               )}
             </>
           )}
@@ -90,12 +90,19 @@ const Login = () => {
       <View style={{ bottom: 10 }}>
         <ColumnContainer>
           <PressableText>Pas encore membre ? </PressableText>
-          <PressableText style={{ color: black, marginTop: 5 }}>
+          <PressableText
+            style={{
+              color: black,
+              marginTop: 5,
+              textDecorationLine: "underline",
+            }}
+          >
             Découvrez comment le devenir
           </PressableText>
         </ColumnContainer>
       </View>
-      <MailRecivedModel
+
+      <ForgetPasswordModel
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
       />
