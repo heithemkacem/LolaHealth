@@ -20,7 +20,7 @@ const Login = () => {
     <MainContainer blurRadius={1}>
       <View style={{ height: ScreenHeight * 0.88 }}>
         <ImageComponent
-          src={require("../assets/icon.png")}
+          src={require("../assets/logo.png")}
           height={91}
           width={149}
         />
