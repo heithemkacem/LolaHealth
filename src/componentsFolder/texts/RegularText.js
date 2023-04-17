@@ -3,7 +3,7 @@ import { colors } from "../../styles/colors";
 import { Text } from "react-native";
 const { white } = colors;
 
-const SmallText = (props) => {
+const RegularText = (props) => {
   return (
     <Text
       style={{
@@ -20,4 +20,4 @@ const SmallText = (props) => {
   );
 };
 
-export default SmallText;
+export default RegularText;

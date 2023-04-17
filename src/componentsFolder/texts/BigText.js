@@ -6,7 +6,10 @@ const { black } = colors;
 const BigText = (props) => {
   return (
     <Text
-      style={{ fontWeight: 700, fontSize: 18, color: black, textAlign: "left" }}
+      style={
+        ({ fontWeight: 700, fontSize: 18, color: black, textAlign: "left" },
+        props.style)
+      }
       {...props}
     >
       {props.children}
