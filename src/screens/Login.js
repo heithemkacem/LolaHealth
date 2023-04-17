@@ -69,14 +69,14 @@ const Login = () => {
               </PressableText>
               {!isSubmitting && (
                 <RegularButton
-                  style={{ marginTop: 20 }}
+                  style={{ marginTop: 30 }}
                   onPress={handleSubmit}
                   title="Se connecter"
                   icon="arrow-right"
                 ></RegularButton>
               )}
               {isSubmitting && (
-                <RegularButton disabled={true} style={{ marginTop: 20 }}>
+                <RegularButton disabled={true} style={{ marginTop: 30 }}>
                   <ActivityIndicator
                     size="small"
                     color={white}

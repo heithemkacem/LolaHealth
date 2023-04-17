@@ -11,12 +11,10 @@ const PressableText = (props) => {
         style={[
           props.style,
           {
-            top: -10,
             fontWeight: 500,
             fontSize: 13,
             textAlign: "right",
             color: darkgray,
-            ...props.style,
           },
         ]}
       >
