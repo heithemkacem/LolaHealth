@@ -1,22 +1,26 @@
 //!This is the regular button of all components
 import React from "react";
-import styled from "styled-components/native";
 import { colors } from "../../styles/colors";
 import RegularText from "../texts/RegularText";
 import RowContainer from "../containers/RowContainer";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 const { primary, white } = colors;
-const ButtonView = styled.TouchableOpacity`
-  background-color: ${primary};
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  border-radius: 8px;
-`;
+import { TouchableOpacity } from "react-native";
+
 const RegularButton = ({ color, icon, title, ...props }) => {
   return (
-    <ButtonView {...props} onPress={props.onPress}>
+    <TouchableOpacity
+      {...props}
+      onPress={props.onPress}
+      style={{
+        backgroundColor: primary,
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+        height: 48,
+        borderRadius: 8,
+      }}
+    >
       {!icon ? (
         <RowContainer>
           <RegularText>{title}</RegularText>
@@ -34,7 +38,7 @@ const RegularButton = ({ color, icon, title, ...props }) => {
           {props.children}
         </RowContainer>
       )}
-    </ButtonView>
+    </TouchableOpacity>
   );
 };
 

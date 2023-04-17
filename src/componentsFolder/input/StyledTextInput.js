@@ -1,34 +1,10 @@
 //!This is the input coponents of all forms
 import React, { useState } from "react";
-import { View, Text } from "react-native";
-import styled from "styled-components/native";
+import { View, Text, TextInput } from "react-native";
 import { colors } from "../../styles/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import RowContainer from "../containers/RowContainer";
 const { primary, secondary, white, lightgray, darkgray, grayforlabel } = colors;
-
-const RowContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-  padding: 5px;
-`;
-const InputField = styled.TextInput`
-  background-color: ${white};
-  padding-left: 47px;
-  padding-right: 47px;
-  font-size: 16px;
-  height: 48px;
-  border: 1px solid #e1e3ea;
-  border-radius: 8px;
-`;
-
-const LeftIcon = styled.View`
-  position: absolute;
-  top: 30%;
-  left: 15px;
-  z-index: 1;
-  border-radius: 3px;
-`;
 
 const StyledTextInput = ({ icon, label, errors, isPassword, ...props }) => {
   const [inputBackgroundColor, setInputBackgroundColor] = useState("white");
@@ -104,22 +80,37 @@ const StyledTextInput = ({ icon, label, errors, isPassword, ...props }) => {
   return (
     <View style={(props.style, { paddingBottom: 16 })}>
       <View>
-        <LeftIcon>
+        <View
+          style={{
+            position: "absolute",
+            top: "30%",
+            left: 15,
+            zIndex: 1,
+            borderRadius: 3,
+          }}
+        >
           <MaterialCommunityIcons
             name={icon}
             size={19}
             color={iconBackgroundColor}
           />
-        </LeftIcon>
+        </View>
         <View style={labelStyle}>
           <Text style={labelTextStyle}>{label}</Text>
         </View>
-        <InputField
+        <TextInput
           {...props}
           style={{
             backgroundColor: inputBackgroundColor,
             ...props?.style,
-            borderColor: errors ? "red" : secondary,
+            borderColor: errors ? "red" : "#e1e3ea",
+            backgroundColor: white,
+            paddingLeft: 47,
+            paddingRight: 47,
+            fontSize: 16,
+            height: 48,
+            borderRadius: 8,
+            borderWidth: 1,
           }}
           secureTextEntry={isPassword}
           onFocus={() => customOnFocus()}
@@ -131,7 +122,8 @@ const StyledTextInput = ({ icon, label, errors, isPassword, ...props }) => {
           //if there is an error show the error message and the icon of error message
           errors && (
             //show text that contain the error message
-            <RowContainer>
+
+            <RowContainer style={{ padding: 5 }}>
               <Text style={{ color: "red", fontWeight: 500 }}>{errors}</Text>
               <MaterialCommunityIcons
                 name="alert-circle"

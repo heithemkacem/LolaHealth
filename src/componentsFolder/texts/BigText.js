@@ -1,19 +1,17 @@
 import React from "react";
-import styled from "styled-components/native";
 import { colors } from "../../styles/colors";
+import { Text } from "react-native";
 const { black } = colors;
-const StyledText = styled.Text`
-  font-weight: 700;
-  font-size: 18px;
-  color: ${black};
-  text-align: left;
-`;
+
 const BigText = (props) => {
   return (
-    <StyledText {...props}>
+    <Text
+      style={{ fontWeight: 700, fontSize: 18, color: black, textAlign: "left" }}
+      {...props}
+    >
       {props.children}
       {props.text}
-    </StyledText>
+    </Text>
   );
 };
 

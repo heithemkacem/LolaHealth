@@ -1,18 +1,20 @@
 //!Logo Component
 import React from "react";
-import styled from "styled-components/native";
 import { ScreenHeight } from "../../util/shared";
-import { Image } from "react-native";
-const IconBg = styled.View`
-  height: ${ScreenHeight * 0.25}px;
-  justify-content: center;
-  align-items: center;
-`;
+import { Image, View } from "react-native";
+
 const ImageComponent = ({ src, width, height, ...props }) => {
   return (
-    <IconBg style={{ ...props.style }}>
+    <View
+      style={{
+        ...props.style,
+        height: ScreenHeight * 0.25,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Image source={src} style={{ width: width, height: height }} />
-    </IconBg>
+    </View>
   );
 };
 
