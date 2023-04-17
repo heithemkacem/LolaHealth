@@ -12,14 +12,17 @@ const RegularButton = ({ color, icon, title, ...props }) => {
     <TouchableOpacity
       {...props}
       onPress={props.onPress}
-      style={{
-        backgroundColor: primary,
-        width: "100%",
-        alignItems: "center",
-        justifyContent: "center",
-        height: 48,
-        borderRadius: 8,
-      }}
+      style={[
+        props.style,
+        {
+          backgroundColor: primary,
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+          height: 48,
+          borderRadius: 8,
+        },
+      ]}
     >
       {!icon ? (
         <RowContainer>

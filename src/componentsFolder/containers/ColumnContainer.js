@@ -6,14 +6,17 @@ const ColumnContainer = (props) => {
   return (
     <View
       {...props}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignContent: "space-between",
-        alignItems: "center",
-        padding: 15,
-      }}
+      style={[
+        props.style,
+        {
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignContent: "space-between",
+          alignItems: "center",
+          padding: 15,
+        },
+      ]}
     >
       {props.children}
     </View>

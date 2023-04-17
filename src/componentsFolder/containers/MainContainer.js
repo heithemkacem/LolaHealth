@@ -6,7 +6,10 @@ const { white, black } = colors;
 
 const MainContainer = (props) => {
   return (
-    <SafeAreaView style={{ padding: 15, backgroundColor: white }} {...props}>
+    <SafeAreaView
+      style={[props.style, { padding: 15, backgroundColor: white }]}
+      {...props}
+    >
       {props.children}
     </SafeAreaView>
   );

@@ -6,12 +6,15 @@ const { white } = colors;
 const RegularText = (props) => {
   return (
     <Text
-      style={{
-        fontWeight: 700,
-        fontSize: 15,
-        color: white,
-        textAlign: "center",
-      }}
+      style={[
+        props.style,
+        {
+          fontWeight: 700,
+          fontSize: 15,
+          color: white,
+          textAlign: "center",
+        },
+      ]}
       {...props}
     >
       {props.children}

@@ -78,7 +78,7 @@ const StyledTextInput = ({ icon, label, errors, isPassword, ...props }) => {
   };
 
   return (
-    <View style={(props.style, { paddingBottom: 16 })}>
+    <View style={[props.style, { paddingBottom: 16 }]}>
       <View>
         <View
           style={{

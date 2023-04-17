@@ -6,12 +6,15 @@ const { gray } = colors;
 const SmallText = (props) => {
   return (
     <Text
-      style={{
-        fontWeight: 700,
-        fontSize: 13,
-        color: gray,
-        textAlign: "center",
-      }}
+      style={[
+        {
+          fontWeight: 700,
+          fontSize: 13,
+          color: gray,
+          textAlign: "center",
+        },
+        props.style,
+      ]}
       {...props}
     >
       {props.children}

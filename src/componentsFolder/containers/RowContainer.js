@@ -5,12 +5,15 @@ import { View } from "react-native";
 const RowContainer = (props) => {
   return (
     <View
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
+      style={[
+        props.style,
+        {
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        },
+      ]}
       {...props}
     >
       {props.children}
