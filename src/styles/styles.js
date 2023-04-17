@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   blurEffect: {
     width: "100%",
-    height: ScreenHeight * 0.1,
+    height: ScreenHeight * 0.72,
     zIndex: 0,
   },
 
