@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Modal,
-  Pressable,
-  View,
-  Button,
-  ActivityIndicator,
-} from "react-native";
-import BigText from "../texts/BigText";
+import { Modal, Pressable, View, Text, ActivityIndicator } from "react-native";
 import { Formik } from "formik";
 import { ForgetSchema } from "../../util/validationSchemas";
 import StyledTextInput from "../input/StyledTextInput";
@@ -16,6 +9,7 @@ import { styles } from "../../styles/styles";
 import MailRecivedModel from "./MailRecivedModel";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
+import PressableText from "../texts/PressableText";
 
 const ForgetPasswordModel = ({ modalVisible, setModalVisible }) => {
   const [mailRecivedModalVisible, setMailRecivedModalVisible] = useState(false);
@@ -47,7 +41,7 @@ const ForgetPasswordModel = ({ modalVisible, setModalVisible }) => {
               />
             </Pressable>
             <View style={styles.m20}>
-              <BigText style={styles.p15} text="Mot de passe oublié ?" />
+              <Text style={styles.bigText}>Mot de passe oublié ?</Text>
               <Formik
                 initialValues={{ email: "" }}
                 //validationSchema={ForgetSchema}

@@ -1,7 +1,6 @@
 import React from "react";
-import { Modal, Pressable, View } from "react-native";
+import { Modal, Pressable, View, Text } from "react-native";
 import RegularText from "../texts/RegularText";
-import BigText from "../texts/BigText";
 import { colors } from "../../styles/colors";
 import { BlurView } from "expo-blur";
 import { styles } from "../../styles/styles";
@@ -43,11 +42,11 @@ const MailRecivedModel = ({ modalVisible, setModalVisible }) => {
               style={styles.imageStyle}
             />
             <View style={styles.mailModalView}>
-              <BigText style={styles.bigText} text="Email envoyé" />
-              <RegularText
-                style={styles.regularText}
-                text="Les informations de récupération de mot de passe vous on été envoyé sur votre email Laure.hvk@exemple.fr"
-              />
+              <Text style={styles.bigTextCenter}>Email envoyé</Text>
+              <Text style={styles.regularText}>
+                Les informations de récupération de mot de passe vous on été
+                envoyé sur votre email Laure.hvk@exemple.fr
+              </Text>
               <View style={styles.p15}>
                 <RegularButton title="Retourner à la page de connexion" />
               </View>
