@@ -104,7 +104,6 @@ const StyledTextInput = ({ icon, label, errors, isPassword, ...props }) => {
             backgroundColor: inputBackgroundColor,
             ...props?.style,
             borderColor: errors ? "red" : "#e1e3ea",
-            backgroundColor: white,
             paddingLeft: 47,
             paddingRight: 47,
             fontSize: 16,

@@ -6,13 +6,11 @@ import StyledTextInput from "../input/StyledTextInput";
 import RegularButton from "../buttons/RegularButton";
 import { colors } from "../../styles/colors";
 import { styles } from "../../styles/styles";
-import MailRecivedModel from "./MailRecivedModel";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
 import PressableText from "../texts/PressableText";
 
 const ForgetPasswordModel = ({ modalVisible, setModalVisible }) => {
-  const [mailRecivedModalVisible, setMailRecivedModalVisible] = useState(false);
   const { white, black, grayformodel } = colors;
 
   return (
@@ -31,7 +29,10 @@ const ForgetPasswordModel = ({ modalVisible, setModalVisible }) => {
           <View style={styles.modalView}>
             <Pressable
               onPress={() => setModalVisible(!modalVisible)}
-              style={styles.closeButton}
+              style={[
+                styles.closeButton,
+                { position: "absolute", right: 20, top: 15 },
+              ]}
             >
               <MaterialCommunityIcons
                 name="close"
@@ -46,7 +47,7 @@ const ForgetPasswordModel = ({ modalVisible, setModalVisible }) => {
                 initialValues={{ email: "" }}
                 //validationSchema={ForgetSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                  setMailRecivedModalVisible(true);
+                  console.log(values);
                 }}
               >
                 {({
@@ -93,10 +94,6 @@ const ForgetPasswordModel = ({ modalVisible, setModalVisible }) => {
           </View>
         </View>
       </Modal>
-      <MailRecivedModel
-        modalVisible={mailRecivedModalVisible}
-        setModalVisible={setMailRecivedModalVisible}
-      />
     </>
   );
 };

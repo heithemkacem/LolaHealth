@@ -24,7 +24,10 @@ const MailRecivedModel = ({ modalVisible, setModalVisible }) => {
         <View style={styles.mailCenteredView}>
           <Pressable
             onPress={() => setModalVisible(!modalVisible)}
-            style={styles.closeButton}
+            style={[
+              styles.closeButton,
+              { position: "absolute", right: 20, top: 15 },
+            ]}
           >
             <MaterialCommunityIcons
               name="close"

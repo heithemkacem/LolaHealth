@@ -25,15 +25,11 @@ export const styles = StyleSheet.create({
     height: ScreenHeight * 0.72,
     zIndex: 0,
   },
-
   closeButton: {
     width: 40,
     height: 40,
     borderRadius: 20,
     backgroundColor: grayformodel,
-    position: "absolute",
-    right: 20,
-    top: 15,
     zIndex: 1,
   },
   iconStyle: {

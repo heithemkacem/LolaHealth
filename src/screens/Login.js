@@ -11,13 +11,14 @@ import ColumnContainer from "../componentsFolder/containers/ColumnContainer";
 import { colors } from "../styles/colors";
 import { ScreenHeight } from "../util/shared";
 import ForgetPasswordModel from "../componentsFolder/model/ForgetPasswordModel";
-
-const Login = () => {
+import MailRecivedModel from "../componentsFolder/model/MailRecivedModel";
+import { moveTo } from "../util/moveTo";
+const Login = ({ navigation }) => {
   const { black, white } = colors;
+  const [mailRecivedModalVisible, setMailRecivedModalVisible] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-
   return (
-    <MainContainer blurRadius={1}>
+    <MainContainer>
       <View style={{ height: ScreenHeight * 0.88 }}>
         <ImageComponent
           src={require("../assets/logo.png")}
@@ -28,7 +29,7 @@ const Login = () => {
           initialValues={{ email: "", password: "" }}
           //validationSchema={LoginSchema}
           onSubmit={(values, { setSubmitting }) => {
-            console.log(values);
+            moveTo(navigation, "Options");
           }}
         >
           {({
@@ -105,6 +106,10 @@ const Login = () => {
       <ForgetPasswordModel
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
+      />
+      <MailRecivedModel
+        modalVisible={mailRecivedModalVisible}
+        setModalVisible={setMailRecivedModalVisible}
       />
     </MainContainer>
   );

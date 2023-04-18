@@ -6,7 +6,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { HeaderBackButton } from "@react-navigation/elements";
 import Login from "../screens/Login";
-
+import Options from "../screens/Options";
+import CircleButton from "../componentsFolder/buttons/CircleButton";
 const Stack = createStackNavigator();
 const { white, black } = colors;
 
@@ -16,10 +17,13 @@ const Root = () => {
       <Stack.Navigator
         initialRouteName="Login"
         screenOptions={{
-          headerLeft: (props) => <HeaderBackButton {...props} />,
-          headerTintColor: black,
+          headerTitle: () => null,
+
+          headerLeft: (props) => (
+            <CircleButton icon="chevron-left" {...props} />
+          ),
           headerStyle: {
-            height: 70,
+            height: 120,
             borderBottomWidth: 0,
             backgroundColor: white,
             shadowColor: "transparent",
@@ -27,21 +31,23 @@ const Root = () => {
             elevation: 0,
           },
           headerLeftContainerStyle: {
-            paddingLeft: 10,
+            position: "absolute",
+            left: 0,
+            bottom: 20,
+            paddingLeft: 15,
           },
-          headerRightContainerStyle: {
-            paddingRight: 25,
-          },
+          headerTintColor: black,
+
+          cardStyle: { backgroundColor: white },
         }}
       >
         <>
           <Stack.Screen
             name="Login"
             component={Login}
-            options={{
-              header: () => null,
-            }}
+            options={{ header: () => null }}
           />
+          <Stack.Screen name="Options" component={Options} />
         </>
       </Stack.Navigator>
     </NavigationContainer>
